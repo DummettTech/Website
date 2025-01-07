@@ -8,10 +8,19 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
 
+      - name: build
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+        steps:
+          - run: npm ci
+          - run: npm run build
+
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          local-dir: ./public/
+          local-dir: ./.next/
+          server-dir: ./public_html/
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
