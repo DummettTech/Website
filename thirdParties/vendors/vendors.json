@@ -1,0 +1,16 @@
+{
+  "darkAge": [
+    {
+      "name": "Gavens Cookies",
+      "slug": "gavins-cookies",
+      "imageSrc": "",
+      "desc": "gavin loves his cookies so much he decided to sell them to you!"
+    },
+    {
+      "name": "Stacies Cookies",
+      "slug": "stacies-cookies",
+      "imageSrc": "",
+      "desc": "stacy loves her cookies so much she decided to sell them to you!"
+    }
+  ]
+}
