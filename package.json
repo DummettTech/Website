@@ -7,6 +7,7 @@
     "file-loader": "^6.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-i18next": "^15.4.0",
     "style-loader": "^4.0.0",
     "url-loader": "^4.1.1"
   },
