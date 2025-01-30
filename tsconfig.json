@@ -16,7 +16,8 @@
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"]
     },
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "resolveJsonModule": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
