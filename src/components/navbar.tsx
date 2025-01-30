@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import logo from "../assets/logo.svg";
 
 const navigation = [
+  { name: "About Us", href: "#", current: false },
   { name: "Contact Us", href: "#", current: false },
   { name: "Dark Ages", href: "#", current: false },
   { name: "Article", href: "#", current: false },
@@ -17,7 +18,7 @@ export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white fixed top-0 w-full z-10 shadow-md">
+    <header className="bg-gray-100 fixed top-0 w-full z-10 shadow-md">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"

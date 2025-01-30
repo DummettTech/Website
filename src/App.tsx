@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./logo.svg";
+import hero from "./assets/hero.png";
 import "./App.css";
 import "./index.css";
 import { useTranslation } from "react-i18next";
@@ -8,26 +8,21 @@ const App: React.FC = () => {
   const { t, i18n } = useTranslation();
   return (
     <div className="App">
-      <main data-testid="main-body" className="bg-gray-800">
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 bg-gray-900 h-screen shadow-lg">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p className="text-white">{t("Welcome to React")}</p>
-        </div>
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 bg-gray-900 h-screen shadow-lg">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p className="text-white">{t("Welcome to React")}</p>
-        </div>
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 bg-gray-900 h-screen shadow-lg">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p className="text-white">{t("Welcome to React")}</p>
-        </div>
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 bg-gray-900 h-screen shadow-lg">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p className="text-white">{t("Welcome to React")}</p>
-        </div>
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 bg-gray-900 h-screen shadow-lg">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p className="text-white">{t("Welcome to React")}</p>
+      <main data-testid="main-body" className="bg-gray-200">
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 bg-white lg:px-8 h-screen shadow-lg pt-10 divide-y-10">
+          <div className="pt-10 text-2xl text-center">
+            <a className="font-semibold">Apply now: </a>
+            <a>We are looking for new organizers! </a>{" "}
+            <a
+              className="text-blue-800 underline"
+              href="https://en.torucon.no/frivillig"
+            >
+              Read more about the positions and how to apply here!
+            </a>
+          </div>
+          <div className="pt-10 placeholder">
+            <img data-testid="heroImage" src={hero}></img>
+          </div>
         </div>
       </main>
     </div>
