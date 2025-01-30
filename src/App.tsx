@@ -13,6 +13,22 @@ const App: React.FC = () => {
           <img src={logo} className="App-logo" alt="logo" />
           <p className="text-white">{t("Welcome to React")}</p>
         </div>
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 bg-gray-900 h-screen shadow-lg">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p className="text-white">{t("Welcome to React")}</p>
+        </div>
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 bg-gray-900 h-screen shadow-lg">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p className="text-white">{t("Welcome to React")}</p>
+        </div>
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 bg-gray-900 h-screen shadow-lg">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p className="text-white">{t("Welcome to React")}</p>
+        </div>
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 bg-gray-900 h-screen shadow-lg">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p className="text-white">{t("Welcome to React")}</p>
+        </div>
       </main>
     </div>
   );
