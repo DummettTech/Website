@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import "./i18n";
 import NavBar from "./components/navbar";
+import Footer from "./components/footer";
 
 const root = ReactDOM.createRoot(document.getElementById("app") as HTMLElement);
 root.render(
@@ -13,6 +14,9 @@ root.render(
     </div>
     <div>
       <App />
+    </div>
+    <div>
+      <Footer />
     </div>
   </React.StrictMode>
 );

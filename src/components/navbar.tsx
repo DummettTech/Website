@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import logo from "../assets/logo.svg";
+import LanguageToggle from "./languageToggle";
 
 const navigation = [
   { name: "About Us", href: "#", current: false },
@@ -37,9 +38,9 @@ export default function NavBar() {
                   aria-current={item.current ? "page" : undefined}
                   className={classNames(
                     item.current
-                      ? "bg-gray-900 text-white"
-                      : "text-black-300 hover:bg-gray-700 hover:text-white text-lg",
-                    "rounded-md px-3 py-2 font-medium"
+                      ? "bg-orange-t text-white"
+                      : "text-black hover:text-orange-t text-lg",
+                    "px-3 py-2 font-medium"
                   )}
                 >
                   {item.name}
@@ -47,6 +48,14 @@ export default function NavBar() {
               ))}
             </div>
           </div>
+        </div>
+        <div>
+          <button className="bg-orange-t text-white rounded-xl px-6 py-3 text-lg font-semibold">
+            Buy Tickets!
+          </button>
+        </div>
+        <div className="px-2">
+          <LanguageToggle />
         </div>
       </nav>
     </header>
