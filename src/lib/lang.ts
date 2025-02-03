@@ -1,3 +1,5 @@
+import { getI18n } from "react-i18next";
+
 export const languageCodes = {
     eng: [
         'en',
@@ -23,4 +25,19 @@ export const detectLanguage = (lang: string) : 'en' | 'no' => {
     } else {
         return 'no'
     }
+}
+
+export const getTranslationMap = (i18n: ReturnType<typeof getI18n>, languagePacks: {en: {}, no: {}}) => {
+
+    const engKeys = Object.keys(languagePacks.en);
+    const noKeys = Object.keys(languagePacks.no);
+
+    if (JSON.stringify(engKeys) !== JSON.stringify(noKeys) ) {
+        throw new Error('Failed to translate, missing keys from translations');
+    }
+
+    i18n.addResources('en', 'en', languagePacks.en);
+    i18n.addResources('no', 'no', languagePacks.no);
+
+    return engKeys;
 }

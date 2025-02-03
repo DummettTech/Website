@@ -14,7 +14,9 @@
     "paths": {
       "@/*": ["src/*"],
       "@components/*": ["src/components/*"],
-      "@assets/*": ["src/assets/*"]
+      "@assets/*": ["src/assets/*"],
+      "@lib/*": ["src/lib/*"],
+      "@translations/*": ["src/translations/*"]
     },
     "baseUrl": "./",
     "resolveJsonModule": true

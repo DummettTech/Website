@@ -1,15 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import logo from "../assets/logo.svg";
-import LanguageToggle from "./languageToggle";
+import logo from "@assets/logo.svg";
+import LanguageToggle from "@components/languageToggle";
+import { useTranslation } from "react-i18next";
+import en from '@translations/nav/en.json';
+import no from '@translations/nav/no.json';
+import { getTranslationMap } from "@/lib/lang";
 
-const navigation = [
-  { name: "About Us", href: "#", current: false },
-  { name: "Contact Us", href: "#", current: false },
-  { name: "Dark Ages", href: "#", current: false },
-  { name: "Article", href: "#", current: false },
-];
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -17,6 +15,16 @@ function classNames(...classes: string[]) {
 
 export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+  const messages = getTranslationMap(i18n, {en, no});
+
+  const navigation = [
+    { name: t('nav.about'), href: "#", current: false },
+    { name: t('nav.contact'), href: "#", current: false },
+    { name: t('nav.event'), href: "#", current: false },
+    { name: t('nav.blog'), href: "#", current: false },
+  ];
+
 
   return (
     <header className="bg-gray-100 fixed top-0 w-full z-10 shadow-md">

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-import Image from "./image";
-
-import gb from "../assets/gb.svg";
-import no from "../assets/no.svg";
-import { detectLanguage } from "../lib/lang";
+import Image from "@components/image";
+import gb from "@assets/gb.svg";
+import no from "@assets/no.svg";
+import { detectLanguage } from "@lib/lang";
 
 // rework to use local translation files instead of flat english or pulling from
 //     the translations folder
