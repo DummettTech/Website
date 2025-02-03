@@ -6,25 +6,27 @@ import gb from "@assets/gb.svg";
 import no from "@assets/no.svg";
 import { detectLanguage } from "@lib/lang";
 
-// rework to use local translation files instead of flat english or pulling from
-//     the translations folder
-
 const LanguageToggle: React.FC = () => {
   const { i18n } = useTranslation();
   const [isOn, setIsOn] = useState(false);
 
   useEffect(() => {
-    if (detectLanguage(i18n.language) === 'en') {
-      setIsOn(true);
+    const savedLanguage = localStorage.getItem("language");
+    if (savedLanguage) {
+      i18n.changeLanguage(savedLanguage);
+      setIsOn(savedLanguage === "en");
+    } else {
+      const detectedLanguage = detectLanguage(i18n.language);
+      i18n.changeLanguage(detectedLanguage);
+      localStorage.setItem("language", detectedLanguage);
+      setIsOn(detectedLanguage === "en");
     }
-  }, [i18n.language]);
+  }, [i18n]);
 
   const toggleSwitch = () => {
-    if (isOn) {
-      i18n.changeLanguage("no");
-    } else {
-      i18n.changeLanguage("en");
-    }
+    const newLanguage = isOn ? "no" : "en";
+    i18n.changeLanguage(newLanguage);
+    localStorage.setItem("language", newLanguage);
     setIsOn(!isOn);
   };
 
