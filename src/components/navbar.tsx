@@ -4,27 +4,25 @@ import React, { useState } from "react";
 import logo from "@assets/logo.svg";
 import LanguageToggle from "@components/languageToggle";
 import { useTranslation } from "react-i18next";
-import en from '@translations/nav/en.json';
-import no from '@translations/nav/no.json';
+import en from "@translations/nav/en.json";
+import no from "@translations/nav/no.json";
 import { getTranslationMap } from "@/lib/lang";
-
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function NavBar() {
+const NavBar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
-  const messages = getTranslationMap(i18n, {en, no});
+  const messages = getTranslationMap(i18n, { en, no });
 
   const navigation = [
-    { name: t('nav.about'), href: "#", current: false },
-    { name: t('nav.contact'), href: "#", current: false },
-    { name: t('nav.event'), href: "#", current: false },
-    { name: t('nav.blog'), href: "#", current: false },
+    { name: t("about"), href: "#", current: false },
+    { name: t("contact"), href: "#", current: false },
+    { name: t("event"), href: "#", current: false },
+    { name: t("blog"), href: "#", current: false },
   ];
-
 
   return (
     <header className="bg-gray-100 fixed top-0 w-full z-10 shadow-md">
@@ -59,7 +57,7 @@ export default function NavBar() {
         </div>
         <div>
           <button className="bg-orange-t text-white rounded-xl px-6 py-3 text-lg font-semibold">
-            Buy Tickets!
+            {t("buyTickets")}
           </button>
         </div>
         <div className="px-2">
@@ -68,4 +66,6 @@ export default function NavBar() {
       </nav>
     </header>
   );
-}
+};
+
+export default NavBar;
