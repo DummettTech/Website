@@ -12,6 +12,11 @@ const resources = {
   },
 };
 
+const detection = {
+  order: ['querystring', 'navigator'],
+  lookupQuerystring: 'lng'
+}
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -21,6 +26,7 @@ i18n
     interpolation: {
       escapeValue: false,
     },
+    detection
   });
 
 export default i18n;

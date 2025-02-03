@@ -5,13 +5,17 @@ import Image from "./image";
 
 import gb from "../assets/gb.svg";
 import no from "../assets/no.svg";
+import { detectLanguage } from "../lib/lang";
+
+// rework to use local translation files instead of flat english or pulling from
+//     the translations folder
 
 const LanguageToggle: React.FC = () => {
   const { i18n } = useTranslation();
   const [isOn, setIsOn] = useState(false);
 
   useEffect(() => {
-    if (i18n.language === "en") {
+    if (detectLanguage(i18n.language) === 'en') {
       setIsOn(true);
     }
   }, [i18n.language]);
