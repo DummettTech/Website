@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import en from "@translations/nav/en.json";
 import no from "@translations/nav/no.json";
 import { getTranslationMap } from "@/lib/lang";
+import Image from "@components/image";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -18,9 +19,9 @@ const NavBar: React.FC = () => {
   const messages = getTranslationMap(i18n, { en, no });
 
   const navigation = [
-    { name: t("about"), href: "#", current: false },
-    { name: t("contact"), href: "#", current: false },
-    { name: t("event"), href: "#", current: false },
+    { name: t("about"), href: "about", current: false },
+    { name: t("contact"), href: "contact", current: false },
+    { name: t("event"), href: "/darkages", current: false },
     { name: t("blog"), href: "#", current: false },
   ];
 
@@ -31,9 +32,14 @@ const NavBar: React.FC = () => {
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img alt="Logo" src={logo} className="h-12 w-auto" />
+            <Image
+              src={logo}
+              width="40px"
+              height="40px"
+              className="rounded"
+            ></Image>
           </a>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">

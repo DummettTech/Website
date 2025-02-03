@@ -16,7 +16,8 @@
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"],
       "@lib/*": ["src/lib/*"],
-      "@translations/*": ["src/translations/*"]
+      "@translations/*": ["src/translations/*"],
+      "@views/*": ["src/views/*"]
     },
     "baseUrl": "./",
     "resolveJsonModule": true
