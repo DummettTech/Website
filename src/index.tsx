@@ -13,8 +13,8 @@ import DarkAges from "@views/Events/DarkAges";
 const root = ReactDOM.createRoot(document.getElementById("app") as HTMLElement);
 root.render(
   <React.StrictMode>
+    <NavBar />
     <Router>
-      <NavBar />
       <div className="pt-20 app">
         <Routes>
           <Route path="/" element={<Homepage />} />

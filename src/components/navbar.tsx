@@ -70,6 +70,15 @@ const NavBar: React.FC = () => {
           <LanguageToggle />
         </div>
       </nav>
+      <a href="https://en.torucon.no/frivillig">
+      <div className="bg-yellow-400 fixed  w-full z-10 shadow-md py-2">
+        <div className="items-center text-center">
+          <p>Interested in volunteering? Click here to find out how!</p>
+             
+        </div>
+        
+      </div>
+      </a>
     </header>
   );
 };
