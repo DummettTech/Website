@@ -5,9 +5,13 @@ import "@/index.css";
 import Image from "@components/image";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { getTranslationMap } from "@/lib/lang";
+import en from "@translations/homepage/en.json";
+import no from "@translations/homepage/no.json";
 
 const App: React.FC = () => {
   const { t, i18n } = useTranslation();
+  getTranslationMap(i18n, { en, no });
 
   return (
     <div>
@@ -15,18 +19,13 @@ const App: React.FC = () => {
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 bg-white lg:px-8 h-screen shadow-lg pt-10 divide-y-10">
           <div className="pt-10 placeholder">
             <Link to="/darkages">
-              <Image src={hero} height="400px" />
+              <Image src={hero} height="400px" alt={t("darkAgesHero")} />
             </Link>
           </div>
           <div className="py-10">
-            <h1 className="text-2xl font-bold text-center">Who are we?</h1>
+            <h1 className="text-2xl font-bold text-center">{t("whoAreWe")}</h1>
             <div className="py-2 pz-40">
-              <h2 className="text-2xl font-semibold py-2 p-40">
-                Torucon is a festival that since 2011 has been held annually in
-                Trondheim for people with leisure pursuits within the fantastic
-                genre. They are mostly based on interests such as science
-                fiction, fantasy, cosplay, many, anime, games, TV series, film.
-              </h2>
+              <h2 className="text-2xl py-2 p-40">{t("blerb")}</h2>
             </div>
             <div></div>
           </div>

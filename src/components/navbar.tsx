@@ -40,6 +40,7 @@ const NavBar: React.FC = () => {
               width="40px"
               height="40px"
               className="rounded"
+              alt={t("homeButton")}
             ></Image>
           </Link>
           <div className="hidden md:block">

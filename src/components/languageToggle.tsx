@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 import Image from "@components/image";
-import gb from "@assets/gb.svg";
-import no from "@assets/no.svg";
-import { detectLanguage } from "@lib/lang";
+import gbFlag from "@assets/gb.svg";
+import noFlag from "@assets/no.svg";
+
+import { detectLanguage, getTranslationMap } from "@lib/lang";
 
 const LanguageToggle: React.FC = () => {
   const { i18n } = useTranslation();
@@ -37,7 +38,7 @@ const LanguageToggle: React.FC = () => {
   return (
     <div className="flex items-center space-x-2">
       <div>
-        <Image src={no} width="25px" height="20px" />
+        <Image src={noFlag} width="25px" height="20px" alt="Norsk" />
       </div>
 
       <div
@@ -52,7 +53,7 @@ const LanguageToggle: React.FC = () => {
       </div>
 
       <div>
-        <Image src={gb} width="25px" height="20px" />
+        <Image src={gbFlag} width="25px" height="20px" alt="English" />
       </div>
     </div>
   );
