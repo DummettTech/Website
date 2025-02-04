@@ -13,20 +13,18 @@ import DarkAges from "@views/Events/DarkAges";
 const App: React.FC = () => {
   const memoizedNavBar = useMemo(() => <NavBar />, []);
   return (
-    <div>
+    <Router>
       {memoizedNavBar}
-      <Router>
-        <div className="pt-20 app">
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/about" element={<AboutUs />} />
-            <Route path="/contact" element={<ContactUs />} />
-            <Route path="/darkages" element={<DarkAges />} />
-          </Routes>
-        </div>
-      </Router>
+      <div className="pt-20 app">
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/darkages" element={<DarkAges />} />
+        </Routes>
+      </div>
       <Footer />
-    </div>
+    </Router>
   );
 };
 
