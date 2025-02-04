@@ -11,14 +11,18 @@ const LanguageToggle: React.FC = () => {
   const [isOn, setIsOn] = useState(false);
 
   useEffect(() => {
+    const detectedLanguage = detectLanguage(i18n.language);
     const savedLanguage = localStorage.getItem("language");
-    if (savedLanguage) {
+
+    if (!detectedLanguage && savedLanguage) {
       i18n.changeLanguage(savedLanguage);
+      console.log(savedLanguage);
       setIsOn(savedLanguage === "en");
     } else {
       const detectedLanguage = detectLanguage(i18n.language);
       i18n.changeLanguage(detectedLanguage);
       localStorage.setItem("language", detectedLanguage);
+      console.log(detectedLanguage);
       setIsOn(detectedLanguage === "en");
     }
   }, [i18n]);

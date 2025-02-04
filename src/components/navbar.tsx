@@ -53,7 +53,7 @@ const NavBar: React.FC = () => {
                     item.current
                       ? "bg-orange-t text-white"
                       : "text-black hover:text-orange-t",
-                    "px-3 py-2 font-medium text-lg"
+                    "px-3 py-2 font-medium text-lg font-semibold"
                   )}
                 >
                   {item.name}
