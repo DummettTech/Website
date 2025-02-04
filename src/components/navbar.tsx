@@ -52,8 +52,8 @@ const NavBar: React.FC = () => {
                   className={classNames(
                     item.current
                       ? "bg-orange-t text-white"
-                      : "text-black hover:text-orange-t text-lg",
-                    "px-3 py-2 font-medium"
+                      : "text-black hover:text-orange-t",
+                    "px-3 py-2 font-medium text-lg"
                   )}
                 >
                   {item.name}
@@ -72,9 +72,9 @@ const NavBar: React.FC = () => {
         </div>
       </nav>
       <Link to="https://en.torucon.no/frivillig">
-        <div className="bg-yellow-400 fixed  w-full z-10 shadow-md py-2">
+        <div className="bg-yellow-400 fixed w-full z-10 shadow-md py-2">
           <div className="items-center text-center">
-            <p>Interested in volunteering? Click here to find out how!</p>
+            <p className="font-semibold">{t("volunteerBanner")}</p>
           </div>
         </div>
       </Link>
