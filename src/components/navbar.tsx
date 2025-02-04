@@ -8,6 +8,7 @@ import en from "@translations/nav/en.json";
 import no from "@translations/nav/no.json";
 import { getTranslationMap } from "@/lib/lang";
 import Image from "@components/image";
+import { Link } from "react-router-dom";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -32,7 +33,7 @@ const NavBar: React.FC = () => {
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
+          <Link to="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <Image
               src={logo}
@@ -40,13 +41,13 @@ const NavBar: React.FC = () => {
               height="40px"
               className="rounded"
             ></Image>
-          </a>
+          </Link>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {navigation.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   aria-current={item.current ? "page" : undefined}
                   className={classNames(
                     item.current
@@ -56,7 +57,7 @@ const NavBar: React.FC = () => {
                   )}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -70,15 +71,13 @@ const NavBar: React.FC = () => {
           <LanguageToggle />
         </div>
       </nav>
-      <a href="https://en.torucon.no/frivillig">
-      <div className="bg-yellow-400 fixed  w-full z-10 shadow-md py-2">
-        <div className="items-center text-center">
-          <p>Interested in volunteering? Click here to find out how!</p>
-             
+      <Link to="https://en.torucon.no/frivillig">
+        <div className="bg-yellow-400 fixed  w-full z-10 shadow-md py-2">
+          <div className="items-center text-center">
+            <p>Interested in volunteering? Click here to find out how!</p>
+          </div>
         </div>
-        
-      </div>
-      </a>
+      </Link>
     </header>
   );
 };
