@@ -17,7 +17,7 @@ function classNames(...classes: string[]) {
 const NavBar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
-  const messages = getTranslationMap(i18n, { en, no });
+  getTranslationMap(i18n, { en, no });
 
   const navigation = [
     { name: t("about"), href: "about", current: false },
@@ -34,7 +34,7 @@ const NavBar: React.FC = () => {
       >
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+            <span className="sr-only" />
             <Image
               src={logo}
               width="40px"

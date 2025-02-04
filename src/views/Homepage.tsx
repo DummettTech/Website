@@ -18,11 +18,10 @@ const App: React.FC = () => {
               <Image src={hero} height="400px" />
             </Link>
           </div>
-          <div className="py-1 border-b-black-500"> </div>
-          <section className="py-4">
-            <h1 className="text-2xl font-bold">Who are we?</h1>
-            <div className="grid grid-cols-2">
-              <h2 className="text-2xl font-semibold py-2">
+          <div className="py-10">
+            <h1 className="text-2xl font-bold text-center">Who are we?</h1>
+            <div className="py-2 pz-40">
+              <h2 className="text-2xl font-semibold py-2 p-40">
                 Torucon is a festival that since 2011 has been held annually in
                 Trondheim for people with leisure pursuits within the fantastic
                 genre. They are mostly based on interests such as science
@@ -30,7 +29,7 @@ const App: React.FC = () => {
               </h2>
             </div>
             <div></div>
-          </section>
+          </div>
         </div>
       </main>
     </div>
