@@ -8,7 +8,7 @@ import { detectLanguage } from "@lib/lang";
 
 const LanguageToggle: React.FC = () => {
   const { i18n } = useTranslation();
-  const [isOn, setIsOn] = useState(false);
+  const [isOn, setIsOn] = useState(localStorage.getItem("language") === "no");
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem("language");
