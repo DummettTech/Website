@@ -14,16 +14,16 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-const NavBar: React.FC = () => {
+const Navbar: React.FC = () => {
 
   const { t, i18n } = useTranslation();
   const location = useLocation();
   getTranslationMap(i18n, { en, no });
 
   const [navigation, setNavigation] = useState([
-    { name: t("about"), href: "/about", current: false },
-    { name: t("contact"), href: "/contact", current: false },
-    { name: t("event"), href: "/darkages", current: false },
+    { name: t("about"), href: "/about", current: location.pathname === '/about' },
+    { name: t("contact"), href: "/contact", current: location.pathname === '/contact' },
+    { name: t("event"), href: "/darkages", current: location.pathname === '/darkages' },
     { name: t("blog"), href: "#", current: false },
   ]);
 
@@ -35,7 +35,15 @@ const NavBar: React.FC = () => {
       }))
     );
   }, [location.pathname]);
-  
+
+  useEffect(() => {
+    setNavigation([
+      { name: t("about"), href: "/about", current: location.pathname === '/about' },
+      { name: t("contact"), href: "/contact", current: location.pathname === '/contact' },
+      { name: t("event"), href: "/darkages", current: location.pathname === '/darkages' },
+      { name: t("blog"), href: "#", current: false },
+    ]);
+  }, [i18n.language, t]);
 
   return (
     <header className="bg-gray-100 fixed top-0 w-full z-10 shadow-md">
@@ -94,4 +102,4 @@ const NavBar: React.FC = () => {
   );
 };
 
-export default NavBar;
+export default Navbar;
