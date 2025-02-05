@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "@assets/logo.svg";
 import LanguageToggle from "@components/languageToggle";
 import { useTranslation } from "react-i18next";
@@ -8,23 +8,34 @@ import en from "@translations/nav/en.json";
 import no from "@translations/nav/no.json";
 import { getTranslationMap } from "@/lib/lang";
 import Image from "@components/image";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
 const NavBar: React.FC = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const { t, i18n } = useTranslation();
+  const location = useLocation();
   getTranslationMap(i18n, { en, no });
 
-  const navigation = [
-    { name: t("about"), href: "about", current: false },
-    { name: t("contact"), href: "contact", current: false },
+  const [navigation, setNavigation] = useState([
+    { name: t("about"), href: "/about", current: false },
+    { name: t("contact"), href: "/contact", current: false },
     { name: t("event"), href: "/darkages", current: false },
     { name: t("blog"), href: "#", current: false },
-  ];
+  ]);
+
+  useEffect(() => {
+    setNavigation((prevNavigation) =>
+      prevNavigation.map((item) => ({
+        ...item,
+        current: item.href === location.pathname,
+      }))
+    );
+  }, [location.pathname]);
+  
 
   return (
     <header className="bg-gray-100 fixed top-0 w-full z-10 shadow-md">
@@ -52,7 +63,7 @@ const NavBar: React.FC = () => {
                   aria-current={item.current ? "page" : undefined}
                   className={classNames(
                     item.current
-                      ? "bg-orange-t text-white"
+                      ? "text-orange-t"
                       : "text-black hover:text-orange-t",
                     "px-3 py-2 font-medium text-lg font-semibold"
                   )}
