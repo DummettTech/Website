@@ -20,7 +20,7 @@ const App: React.FC = () => {
           <div data-testid="main-body" className="bg-gray-200 relative h-full">
             <div
               data-testid="ribbon"
-              className="mx-auto max-w-7xl px-4 py-20 sm:px-6 bg-white lg:px-8 h-full shadow-lg pt-10 divide-y-10 flex-grow flex flex-col"
+              className="mx-auto max-w-7xl px-4 py-20 sm:px-6 bg-white lg:px-8 h-full shadow-lg pt-10"
             >
               <Routes>
                 <Route path="/" element={<Homepage />} />
