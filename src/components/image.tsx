@@ -24,7 +24,7 @@ export default function Image({
   };
 
   return (
-    <div className={`relative ${className}`} style={{ width, height }}>
+    <div className={`relative ${className}`} style={{ width, height, overflow: "hidden" }}>
       {isLoading && (
         <div
           className="absolute inset-0 bg-gray-300"

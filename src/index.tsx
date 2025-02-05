@@ -5,7 +5,7 @@ import "@/index.css";
 import "@/i18n";
 import NavBar from "@components/navbar";
 import Footer from "@components/footer";
-import Homepage from "@views/Homepage";
+import Homepage from "@/views/Homepage/Homepage";
 import AboutUs from "@views/AboutUs";
 import ContactUs from "@views/ContactUs";
 import DarkAges from "@views/Events/DarkAges";
@@ -15,22 +15,38 @@ const App: React.FC = () => {
   return (
     <Router>
       {memoizedNavBar}
-      <div className="pt-20 app">
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route path="/darkages" element={<DarkAges />} />
-        </Routes>
-      </div>
-      <Footer />
+      <main className="pt-20 flex flex-col min-h-screen flex-grow py-10">
+        <div className="pt-10">
+          <div data-testid="main-body" className="bg-gray-200 relative overflow-auto">
+            <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 bg-white lg:px-8 h-screen shadow-lg pt-10 divide-y-10">
+              <Routes>
+                <Route path="/" element={<Homepage />} />
+                <Route path="/about" element={<AboutUs />} />
+                <Route path="/contact" element={<ContactUs />} />
+                <Route path="/darkages" element={<DarkAges />} />
+              </Routes>
+            </div>
+          </div>
+        </div>
+      </main>
     </Router>
   );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("app") as HTMLElement);
+
 root.render(
   <React.StrictMode>
     <App />
+  </React.StrictMode>
+);
+
+const footerRoot = ReactDOM.createRoot(
+  document.getElementById("footer") as HTMLElement
+);
+
+footerRoot.render(
+  <React.StrictMode>
+    <Footer />
   </React.StrictMode>
 );
