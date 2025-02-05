@@ -15,10 +15,13 @@ const App: React.FC = () => {
   return (
     <Router>
       {memoizedNavBar}
-      <main className="pt-20 flex flex-col min-h-screen flex-grow py-10">
-        <div className="pt-10">
-          <div data-testid="main-body" className="bg-gray-200 relative overflow-auto">
-            <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 bg-white lg:px-8 h-screen shadow-lg pt-10 divide-y-10">
+      <main className="pt-20 flex flex-col min-h-screen flex-grow">
+        <div className="pt-10 flex-grow">
+          <div data-testid="main-body" className="bg-gray-200 relative h-full">
+            <div
+              data-testid="ribbon"
+              className="mx-auto max-w-7xl px-4 py-20 sm:px-6 bg-white lg:px-8 h-full shadow-lg pt-10 divide-y-10 flex-grow flex flex-col"
+            >
               <Routes>
                 <Route path="/" element={<Homepage />} />
                 <Route path="/about" element={<AboutUs />} />
