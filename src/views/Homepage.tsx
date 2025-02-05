@@ -24,10 +24,15 @@ const App: React.FC = () => {
           </div>
           <div className="py-10">
             <h1 className="text-2xl font-bold text-center">{t("whoAreWe")}</h1>
-            <div className="py-2 pz-40">
-              <h2 className="text-2xl py-2 p-40">{t("blerb")}</h2>
+            <div className="py-2 px-4 sm:px-6 lg:px-40">
+              <h2 className="text-2xl py-2">{t("blerb")}</h2>
             </div>
-            <div></div>
+            <div className="py-10 content-center">
+              <div className="grid grid-cols-2 gap-4">
+                <div>01</div> <div>02</div>
+                <div>03</div> <div>04</div>
+              </div>
+            </div>
           </div>
         </div>
       </main>
