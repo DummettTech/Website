@@ -43,7 +43,7 @@ export const WhatWeDo: React.FC = () => {
       <OurContent
         heading="Articles"
         imageInfo={{ src: article, alt: "temp" }}
-        body={sampleText}
+        body="Learn more about us and what we're up to. We publish articles on current goings on, plans for the future and highlighting the talent of Torucon!"
         to="/"
       ></OurContent>
     </div>
