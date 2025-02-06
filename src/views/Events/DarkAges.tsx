@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import hero from "@assets/hero.png";
+import React from "react";
 import "@/App.css";
 import "@/index.css";
-import Image from "@components/image";
 import { useTranslation } from "react-i18next";
 
 const DarkAges: React.FC = () => {

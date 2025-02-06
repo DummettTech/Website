@@ -1,14 +1,15 @@
 import React from "react";
-import hero from "@assets/hero.png";
-import "@/App.css";
-import "@/index.css";
-import Image from "@components/image";
+
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { getTranslationMap } from "@/lib/lang";
 
+import hero from "@assets/homepage/hero.png";
 import en from "@translations/homepage/en.json";
 import no from "@translations/homepage/no.json";
+
+import { getTranslationMap } from "@/lib/lang";
+
+import Image from "@components/image";
 import { WhatWeDo } from "./components/WhatWeDo";
 import { WhoAreWe } from "./components/WhoAreWe";
 

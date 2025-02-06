@@ -9,21 +9,29 @@ import no from "@translations/nav/no.json";
 import { getTranslationMap } from "@/lib/lang";
 import Image from "@components/image";
 import { Link, useLocation } from "react-router-dom";
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
+import { joinClasses } from "@/lib/components";
 
 const Navbar: React.FC = () => {
-
   const { t, i18n } = useTranslation();
   const location = useLocation();
   getTranslationMap(i18n, { en, no });
 
   const [navigation, setNavigation] = useState([
-    { name: t("about"), href: "/about", current: location.pathname === '/about' },
-    { name: t("contact"), href: "/contact", current: location.pathname === '/contact' },
-    { name: t("event"), href: "/darkages", current: location.pathname === '/darkages' },
+    {
+      name: t("about"),
+      href: "/about",
+      current: location.pathname === "/about",
+    },
+    {
+      name: t("contact"),
+      href: "/contact",
+      current: location.pathname === "/contact",
+    },
+    {
+      name: t("event"),
+      href: "/darkages",
+      current: location.pathname === "/darkages",
+    },
     { name: t("blog"), href: "#", current: false },
   ]);
 
@@ -38,9 +46,21 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     setNavigation([
-      { name: t("about"), href: "/about", current: location.pathname === '/about' },
-      { name: t("contact"), href: "/contact", current: location.pathname === '/contact' },
-      { name: t("event"), href: "/darkages", current: location.pathname === '/darkages' },
+      {
+        name: t("about"),
+        href: "/about",
+        current: location.pathname === "/about",
+      },
+      {
+        name: t("contact"),
+        href: "/contact",
+        current: location.pathname === "/contact",
+      },
+      {
+        name: t("event"),
+        href: "/darkages",
+        current: location.pathname === "/darkages",
+      },
       { name: t("blog"), href: "#", current: false },
     ]);
   }, [i18n.language, t]);
@@ -69,7 +89,7 @@ const Navbar: React.FC = () => {
                   key={item.name}
                   to={item.href}
                   aria-current={item.current ? "page" : undefined}
-                  className={classNames(
+                  className={joinClasses(
                     item.current
                       ? "text-orange-t"
                       : "text-black hover:text-orange-t",
